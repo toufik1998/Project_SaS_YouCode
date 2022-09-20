@@ -274,7 +274,7 @@ void updateProduct(){
     }
 }
 void menu(){
-    int choice;
+    char choice[20];
 
     do{
         printf("\t ----------\t----------\t----------\n");
@@ -290,9 +290,9 @@ void menu(){
         printf("\t[0] <><><><><><>\t:\tEXIT\t\n");
         printf("\n");
         printf("<><><><> Please enter your choice : \n");
-        scanf("%d", &choice);
+        scanf("%s", &choice);
         system("cls");
-        switch(choice){
+        switch(atoi(choice)){
             case 0: break;
             case 1: addProduct(); break;
             case 2: searchProduct(); break;
@@ -304,7 +304,7 @@ void menu(){
             default : printf("<><><><> Please enter a valid Number!!! <><><><>\n");
             printf("\n");
         }
-    }while(choice != 0);
+    }while(atoi(choice) != 0);
 }
 
 
