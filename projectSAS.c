@@ -225,12 +225,13 @@ void statistiqueProduct(){
     printf("------------ the moyen price of all products : %.2f\n", moyen);
 
 
-    printf("\t ----------\t----------\t----------\t-----------\t----------\n");
-    printf("\t|   name   |   \t|    id    |   \t|  amount  |   \t|   prix   |   \t|   date   |\n");
+    printf("\t ----------\t----------\t----------\t-----------\t----------\t----------\n");
+    printf("\t|   name   |   \t|    id    |   \t|  amount  |   \t|   prix   |   \t|   pricettc   |\t|   date   |\n");
     printf("\t ----------\t----------\t----------\t-----------\t----------\n");
 
     for(int i = 0; i < lentghArrayTransaction; i++){
-        printf("\t%s            \t%d           \t%d         \t%.2f         \t%s\n", transactionArray[i].nameProduct, transactionArray[i].idProduct, transactionArray[i].amountProductBuying, transactionArray[i].prixProductBuying, transactionArray[i].buyTime);
+        float priceTTc = transactionArray[i].prixProductBuying + (transactionArray[i].prixProductBuying * 0.15);
+        printf("\t%s            \t%d           \t%d         \t%.2f        \t%.2f        \t%s\n", transactionArray[i].nameProduct, transactionArray[i].idProduct, transactionArray[i].amountProductBuying, transactionArray[i].prixProductBuying, priceTTc, transactionArray[i].buyTime);
     }
 
     maxMIn();
